@@ -1,0 +1,66 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body{
+    background:url(../images/space.jpg);
+    color: rgb(222, 8, 40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heart{
+    animation-name: heart;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    margin: 100px;
+    font-size: 50px;
+}
+
+@keyframes heart{
+    from{
+        transform:scale(1)
+    }
+    to{
+        transform: scale(1.25);
+    }
+}
+.carousel-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel{
+    display: flex;
+    width: calc(200px*24);
+    animation: play 50s linear infinite;
+}
+
+@keyframes play{
+    0%{
+        transform: translateX(calc(200px*8));
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.slide{
+    width: 300px;
+    height: 300px;
+    padding: 0 10px;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover ;
+}
